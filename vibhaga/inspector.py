@@ -93,12 +93,12 @@ class Inspector:
             exclude_classes)
 
     @staticmethod
-    def get_classes_in_path(path: str,
-                            exclude_classes: List[str] = None
-                           ) -> List[tuple]:
+    def get_classes_in_module(module: str,
+                              exclude_classes: List[str] = None
+                             ) -> List[tuple]:
         """ Returns name / obj pairs in given module """
         output = []
-        module = __import__(path, fromlist=[""])
+        module = __import__(module, fromlist=[""])
         for class_name, class_ in inspect.getmembers(module, inspect.isclass):
             if exclude_classes is not None and class_name in exclude_classes:
                 continue
@@ -121,7 +121,7 @@ class Inspector:
             else:
                 module_path = package_prefix + "." + module_name
 
-            module_classes = Inspector.get_classes_in_path(
+            module_classes = Inspector.get_classes_in_module(
                 module_path,
                 exclude_classes=exclude_classes)
 

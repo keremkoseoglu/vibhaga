@@ -2,7 +2,7 @@
 from os import path
 from sys import modules
 
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 AUTHOR = "Kerem Koseoglu"
 EMAIL = "kerem@keremkoseoglu.com"
 DESCRIPTION = "Vibhaga is a dynamic module loader for Python"
