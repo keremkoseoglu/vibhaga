@@ -1,12 +1,3 @@
-# todo
-"""
-geliştirme
-    vibhaga klasörü aç
-    GTR içeriğini al
-    Joseki içeriğini al
-    Databus içeriğini al
-    test
-yayın 
-    databus'ten kopya çekip ilgili dosyaları ekle
-    readme.md ekle
-"""
+""" Main module of Vibhaga """
+from vibhaga.test.tester import Tester
+Tester().test()
