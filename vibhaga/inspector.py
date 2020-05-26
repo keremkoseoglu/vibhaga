@@ -69,6 +69,17 @@ class Inspector:
         return output
 
     @staticmethod
+    def get_modules_in_cwd_path(path: str,
+                                exclude_prefixes: List[str] = None
+                               ) -> List[str]:
+        """ Returns all modules in a directory
+        path: Describes the path to be scanned
+        exclude_prefixes: Files starting with those prefixes will be excluded
+        """
+        cwd_path = os.path.join(os.getcwd(), path)
+        return Inspector.get_modules_in_path(cwd_path, exclude_prefixes)
+
+    @staticmethod
     def get_classes_in_cwd_container(container: Container,
                                      exclude_prefixes: List[str] = None,
                                      exclude_classes: List[str] = None
