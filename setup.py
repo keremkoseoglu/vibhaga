@@ -1,28 +1,14 @@
 """ vibhaga setup module """
 import os
 import setuptools
-import vibhaga
-
-
-def get_vibhaga_requirements() -> []:
-    """ Returns a list of requirements """
-    output = [] 
-    lib_folder = os.path.dirname(os.path.realpath(__file__))
-    requirement_path = lib_folder + '/requirements.txt'
-
-    if os.path.isfile(requirement_path):
-        with open(requirement_path) as f:
-            output = f.read().splitlines()
-
-    return output
-
+from setuptools import find_packages, setup
 
 setuptools.setup(
-    name="vibhaga-keremkoseoglu",
-    version=vibhaga.__version__,
-    author=vibhaga.AUTHOR,
-    author_email=vibhaga.EMAIL,
-    description=vibhaga.DESCRIPTION,
+    name="vibhaga",
+    version="0.2.1",
+    author="Kerem Koseoglu",
+    author_email="kerem@keremkoseoglu.com",
+    description="Vibhaga is a dynamic module loader for Python",
     long_description="A dynamic Python module loader",
     long_description_content_type="text/markdown",
     url="https://github.com/keremkoseoglu/vibhaga",
@@ -32,7 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=vibhaga.PYTHON_VERSION,
-    install_requires=get_vibhaga_requirements(),
+    python_requires=">=3.6.5",
     include_package_data=True
 )
