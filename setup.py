@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 
 setuptools.setup(
     name="vibhaga",
-    version="0.2.1",
+    version="0.2.2",
     author="Kerem Koseoglu",
     author_email="kerem@keremkoseoglu.com",
     description="Vibhaga is a dynamic module loader for Python",

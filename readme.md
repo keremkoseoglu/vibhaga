@@ -4,6 +4,14 @@ Vibhaga is a dynamic module / class inspector for Python. If you want to dynamic
 
 ## Installation
 
+To install from PYPI:
+
+```
+pip install vibhaga-keremkoseoglu
+```
+
+To install from GitHub:
+
 ```
 pip install git+https://github.com/keremkoseoglu/vibhaga.git
 ```
