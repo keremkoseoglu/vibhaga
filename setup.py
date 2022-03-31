@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 
 setuptools.setup(
     name="vibhaga",
-    version="0.2.2",
+    version="0.2.3",
     author="Kerem Koseoglu",
     author_email="kerem@keremkoseoglu.com",
     description="Vibhaga is a dynamic module loader for Python",
@@ -18,6 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.6.5",
+    python_requires=">=3.7",
     include_package_data=True
 )

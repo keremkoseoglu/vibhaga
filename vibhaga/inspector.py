@@ -2,16 +2,16 @@
 import inspect
 import os
 from typing import List
+from dataclasses import dataclass
 
-
+@dataclass
 class Container:
     """ Describes a package or module """
+    name_parts: List[str] = None
 
-    def __init__(self, name_parts: List[str] = None):
-        if name_parts is None:
-            self._name_parts = []
-        else:
-            self._name_parts = name_parts
+    def __post_init__(self):
+        if self.name_parts is None:
+            self.name_parts = []
 
     @property
     def cwd_path(self) -> str:
@@ -83,7 +83,7 @@ class Inspector:
     def get_classes_in_cwd_container(container: Container,
                                      exclude_prefixes: List[str] = None,
                                      exclude_classes: List[str] = None
-                                    ) -> []:
+                                    ) -> List:
         """ Returns object instances of modules in the given package """
         return Inspector._get_classes_in_container_path(
             container.cwd_path,
@@ -95,7 +95,7 @@ class Inspector:
     def get_classes_in_container(container: Container,
                                  exclude_prefixes: List[str] = None,
                                  exclude_classes: List[str] = None
-                                ) -> []:
+                                ) -> List:
         """ Returns object instances of modules in a directory """
         return Inspector._get_classes_in_container_path(
             container.path,
@@ -121,7 +121,7 @@ class Inspector:
                                        package_prefix: str = "",
                                        exclude_prefixes: List[str] = None,
                                        exclude_classes: List[str] = None
-                                      ) -> []:
+                                      ) -> List:
         """ Returns object instances of modules in a directory """
         output = []
         modules = Inspector.get_modules_in_path(path, exclude_prefixes)
