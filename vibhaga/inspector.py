@@ -141,6 +141,13 @@ class Inspector:
                     continue
                 if module_class.__module__[:len(package_prefix)] != package_prefix:
                     continue
+                is_duplicate = False
+                for output_entry in output:
+                    if output_entry.__module__ == module_class.__module__:
+                        is_duplicate = True
+                        break
+                if is_duplicate:
+                    continue
                 output.append(module_class)
 
         return output
