@@ -23,7 +23,7 @@ class Container:
     def name(self) -> str:
         """ Returns the module name in a.b.c format """
         output = ""
-        for name_part in self._name_parts:
+        for name_part in self.name_parts:
             if output != "":
                 output += "."
             output += name_part
@@ -33,7 +33,7 @@ class Container:
     def path(self) -> str:
         """ Returns the module subpath in a/b/c format """
         output = ""
-        for name_part in self._name_parts:
+        for name_part in self.name_parts:
             output = os.path.join(output, name_part)
         return output
 
