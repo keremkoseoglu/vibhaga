@@ -1,2 +1,2 @@
-python setup.py dist
+python setup.py sdist
 twine upload dist/*
